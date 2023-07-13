@@ -1,10 +1,10 @@
 
 #define BUZZER_PIN 22
-#define BUTTON1_PIN 23
-#define BUTTON2_PIN 24
-#define BUTTON3_PIN 25
-#define BUTTON4_PIN 26
-#define BUTTON5_PIN 27
+#define BUTTON1_PIN 16
+#define BUTTON2_PIN 17
+#define BUTTON3_PIN 18
+#define BUTTON4_PIN 19
+#define BUTTON5_PIN 21
 
 void setup() {
   Serial.begin(9600);                // initialize serial
