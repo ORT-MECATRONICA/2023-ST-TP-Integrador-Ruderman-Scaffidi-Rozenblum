@@ -1,22 +1,20 @@
-//Ruderman-Rozenblum-Scaffidi
+#include <LiquidCrystal.h>
 
-#include <Wire.h> 
-#include <LiquidCrystal_I2C.h>
+//Crear el objeto LCD con los números correspondientes (rs, en, d4, d5, d6, d7)
+LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 
-// Set the LCD address to 0x27 for a 16 chars and 2 line display
-LiquidCrystal_I2C lcd(0x27, 16, 2);
-
-void setup()
-{
-	// initialize the LCD
-	lcd.begin();
-
-	// Turn on the blacklight and print a message.
-	lcd.backlight();
-	lcd.print("Hello world!");
+void setup() {
+  // Inicializar el LCD con el número de  columnas y filas del LCD
+  lcd.begin(16, 2);
+  // Escribimos el Mensaje en el LCD.
+  lcd.print("Hola mundo!!!");
 }
 
-void loop()
-{
-	// Do nothing here...
+void loop() {
+   // Ubicamos el cursor en la primera posición(columna:0) de la segunda línea(fila:1)
+  lcd.setCursor(0, 1);
+   // Escribimos el número de segundos trascurridos
+  lcd.print(millis()/1000);
+  lcd.print(" Segundos");
+  delay(100);
 }
